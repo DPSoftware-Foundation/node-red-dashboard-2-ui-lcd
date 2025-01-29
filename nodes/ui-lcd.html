@@ -1,0 +1,62 @@
+<script type="text/javascript">
+    RED.nodes.registerType('ui-lcd', {
+        category: RED._('@flowfuse/node-red-dashboard/ui-base:ui-base.label.category'),
+        color: RED._('@flowfuse/node-red-dashboard/ui-base:ui-base.colors.light'),
+        defaults: {
+            name: { value: "" },
+            group: { type: 'ui-group', required: true },
+            order: { value: 0 },            
+            width: {
+                value: 0,
+                validate: function (v) {
+                    const width = v || 0
+                    const currentGroup = $('#node-input-group').val() || this.group
+                    const groupNode = RED.nodes.node(currentGroup)
+                    const valid = !groupNode || +width <= +groupNode.width
+                    $('#node-input-size').toggleClass('input-error', !valid)
+                    return valid
+                }
+            },
+            height: { value: 0 },
+
+            label: { value: "" },
+            autoClear: { value: true },
+            rom: { value: []}
+
+        },
+        inputs: 1,
+        outputs: 0,
+        icon: "font-awesome/fa-terminal",
+        label: function() {
+            return this.name || "LCD";
+        },
+        oneditprepare: function () {
+            $('#node-input-size').elementSizer({
+                width: '#node-input-width',
+                height: '#node-input-height',
+                group: '#node-input-group'
+            });
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="ui-lcd">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-group"><i class="fa fa-table"></i> Group</label>
+        <input type="text" id="node-input-group">
+    </div>
+    <div class="form-row">
+        <label><i class="fa fa-object-group"></i> <span data-i18n="ui-lcd.label.size"></label>
+        <input type="hidden" id="node-input-width">
+        <input type="hidden" id="node-input-height">
+        <button class="editor-button" id="node-input-size"></button>
+    </div>
+    <div class="form-row">
+        <label for="node-input-example">Auto Clear Text </label>
+        <input type="checkbox" id="node-input-lcd-auto-clear">
+    </div>
+</script>
