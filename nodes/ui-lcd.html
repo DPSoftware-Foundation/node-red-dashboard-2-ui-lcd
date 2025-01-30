@@ -19,10 +19,15 @@
             },
             height: { value: 0 },
 
-            label: { value: "" },
-            autoClear: { value: true },
-            rom: { value: []}
-
+            label: { value: "LCD" },
+            rows : { value: 2 },
+            cols : { value: 16 },
+            pixel_size: { value: 3 },
+            space_size: { value: 1 },
+            backlight_color: { value: "#ccdd22" },
+            pixel_color: { value: "#474d0b" },
+            auto_clear: { value: true },
+            rom: { value: "eu" }
         },
         inputs: 1,
         outputs: 0,
@@ -36,6 +41,8 @@
                 height: '#node-input-height',
                 group: '#node-input-group'
             });
+            $('#node-input-backlight_color').val(this.backlight_color || "#ccdd22");
+            $('#node-input-pixel_color').val(this.pixel_color || "#474d0b");
         }
     });
 </script>
@@ -50,13 +57,48 @@
         <input type="text" id="node-input-group">
     </div>
     <div class="form-row">
-        <label><i class="fa fa-object-group"></i> <span data-i18n="ui-lcd.label.size"></label>
+        <label><i class="fa fa-object-group"></i> Size</label>
         <input type="hidden" id="node-input-width">
         <input type="hidden" id="node-input-height">
         <button class="editor-button" id="node-input-size"></button>
     </div>
     <div class="form-row">
-        <label for="node-input-example">Auto Clear Text </label>
-        <input type="checkbox" id="node-input-lcd-auto-clear">
+        <label for="node-input-label"><i class="fa fa-font"></i> Label</label>
+        <input type="text" id="node-input-label">
+    </div>
+    <div class="form-row">
+        <label for="node-input-rows"><i class="fa fa-th"></i> Rows</label>
+        <input type="number" id="node-input-rows" min="1" value="2">
+    </div>
+    <div class="form-row">
+        <label for="node-input-cols"><i class="fa fa-columns"></i> Columns</label>
+        <input type="number" id="node-input-cols" min="1" value="16">
+    </div>
+    <div class="form-row">
+        <label for="node-input-pixel_size"><i class="fa fa-th-large"></i> Pixel Size</label>
+        <input type="number" id="node-input-pixel_size" min="1" value="3">
+    </div>
+    <div class="form-row">
+        <label for="node-input-space_size"><i class="fa fa-arrows-h"></i> Space Size</label>
+        <input type="number" id="node-input-space_size" min="0" value="1">
+    </div>
+    <div class="form-row">
+        <label for="node-input-backlight_color"><i class="fa fa-lightbulb-o"></i> Backlight Color</label>
+        <input type="color" id="node-input-backlight_color" value="#ccdd22">
+    </div>
+    <div class="form-row">
+        <label for="node-input-pixel_color"><i class="fa fa-paint-brush"></i> Pixel Color</label>
+        <input type="color" id="node-input-pixel_color" value="#474d0b">
+    </div>
+    <div class="form-row">
+        <label for="node-input-auto_clear"><i class="fa fa-trash"></i> Auto Clear Text</label>
+        <input type="checkbox" id="node-input-auto_clear" checked>
+    </div>
+    <div class="form-row">
+        <label for="node-input-rom"><i class="fa fa-font"></i> ROM</label>
+        <select id="node-input-rom">
+            <option value="eu" selected>EU</option>
+            <option value="jp">JP</option>
+        </select>
     </div>
 </script>

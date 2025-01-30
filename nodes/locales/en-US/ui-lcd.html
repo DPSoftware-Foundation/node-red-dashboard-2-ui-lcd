@@ -1,3 +1,48 @@
 <script type="text/html" data-help-name="ui-lcd">
-    <p>In-Editor help text will go here.</p>
+    <p>Add Character LCD to dashboard.</p>
+    
+    <h1>Send Custom Characters to an LCD Display in Node-RED</h1>
+    <p>This Node allows you to send custom characters to an LCD display in Node-RED. You can easily create custom characters using the <strong><a href="https://maxpromer.github.io/LCD-Character-Creator/" target="_blank">LCD Character Creator</a></strong> tool and send them to your display.</p>
+
+    <h2>Steps to Create and Send Custom Characters</h2>
+    
+    <ol>
+        <li>
+            <h3>Create a Custom Character:</h3>
+            <ul>
+                <li>Go to the <a href="https://maxpromer.github.io/LCD-Character-Creator/" target="_blank">LCD Character Creator</a>.</li>
+                <li>Design your custom character.</li>
+                <li>Set the "Data Type" option to "Hex."</li>
+                <li>Copy the generated hex values for the custom character.</li>
+            </ul>
+        </li>
+
+        <li>
+            <h3>Format the Custom Character Payload:</h3>
+            <p>After generating the hex values, you need to format the data into an array before sending it to the LCD display.</p>
+            <pre>
+msg.cusChar = [
+    0x1F,
+    0x1F,
+    0x1F,
+    0x1F,
+    0x1F,
+    0x1F,
+    0x1F,
+    0x1F
+];
+
+return msg;
+            </pre>
+            <ul>
+                <li><code>msg.cusChar</code> should contain the hex values of the custom character.</li>
+                <li>You can adjust the array to match the design of your custom character.</li>
+            </ul>
+        </li>
+
+        <li>
+            <h3>Send the Payload:</h3>
+            <p>Once the payload is formatted, send it to your LCD display using the appropriate function or node to update the display with your custom character.</p>
+        </li>
+    </ol>
 </script>

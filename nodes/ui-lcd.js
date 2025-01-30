@@ -10,12 +10,26 @@ module.exports = function (RED) {
         // Server-side event handlers
         const evts = {
             onAction: true,
+            beforeSend: function (msg) {
+                const updates = msg.ui_update
+                if (updates) {
+                    if (typeof (updates.label) !== 'undefined') {
+                        base.stores.state.set(group.getBase(), node, msg, 'label', updates.label)
+                    }
+                }
+                return msg
+            },
             onInput: function (msg, send, done) {
                 base.stores.data.save(base, node, msg)
                 
                 send(msg)
             },
-            onSocket: {}
+            onSocket: {
+                connect: function (socket) {
+                    // Send the configuration values to the client-side widget
+                    socket.emit('widget-config:' + node.id, config);
+                }
+            }
         };
 
         // Register node with Dashboard UI
