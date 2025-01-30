@@ -179,4 +179,4 @@ This is a example for using LCD.
 
 This project is licensed under the **Apache-2.0**. See the [LICENSE](LICENSE).
 
-[`Char-lcd`](https://github.com/jazz-soft/char-lcd) is licensed under the **MIT license**.
+[`char-lcd`](https://github.com/jazz-soft/char-lcd) is licensed under the **MIT license**.
