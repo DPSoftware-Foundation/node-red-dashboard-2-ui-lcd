@@ -40,7 +40,8 @@ export default {
             pix: this.props.pixel_size || 3,
             brk: this.props.space_size || 1,
             off: this.props.backlight_color || '#ccdd22',
-            on: this.props.pixel_color || '#474d0b'
+            on: this.props.pixel_color || '#474d0b',
+            transitionDuration: `${this.props.transitionDuration || 0}ms`
         });
 
         this.$socket.on('widget-load:' + this.id, (msg) => {

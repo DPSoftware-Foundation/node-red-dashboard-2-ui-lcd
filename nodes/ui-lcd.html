@@ -27,7 +27,8 @@
             backlight_color: { value: "#ccdd22" },
             pixel_color: { value: "#474d0b" },
             auto_clear: { value: true },
-            rom: { value: "eu" }
+            rom: { value: "eu" },
+            transitionDuration: { value: 0 }
         },
         inputs: 1,
         outputs: 0,
@@ -100,5 +101,9 @@
             <option value="eu" selected>EU</option>
             <option value="jp">JP</option>
         </select>
+    </div>
+    <div class="form-row">
+        <label for="node-input-transitionDuration"><i class="fa fa-clock-o"></i> Transition Duration</label>
+        <input type="number" id="node-input-transitionDuration" min="0" value="0">
     </div>
 </script>

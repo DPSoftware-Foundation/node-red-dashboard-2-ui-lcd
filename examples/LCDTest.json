@@ -1,5 +1,466 @@
 [
     {
+        "id": "17198d95159c5227",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "ed2b8a320c97fabb",
+        "type": "group",
+        "z": "17198d95159c5227",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "b34da12927cc3a1d",
+            "48a1c88b05e8f2f5",
+            "80f2052206f9013f",
+            "c6fc0470250cccd6",
+            "dc66a6326ccc814c",
+            "923e3bb7f9fc2586",
+            "146ba5bb8be8d827",
+            "e606e2eb76a0be2f",
+            "673d5f3455705318",
+            "e1e304f1077f5c91"
+        ],
+        "x": 14,
+        "y": 179,
+        "w": 812,
+        "h": 262
+    },
+    {
+        "id": "53fc997ba361833f",
+        "type": "group",
+        "z": "17198d95159c5227",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "1898b845b4f053c7",
+            "dfdc401a3c8dc6a2",
+            "4c3bde40c588b3d2",
+            "32b5acddafcbac74",
+            "05e8c69f3a1b2be7",
+            "a442d02cb26208a9"
+        ],
+        "x": 14,
+        "y": 19,
+        "w": 672,
+        "h": 142
+    },
+    {
+        "id": "263938e8e63c7ffe",
+        "type": "group",
+        "z": "17198d95159c5227",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "b24dccc8209e55a6",
+            "6447cdf97ea1896a",
+            "508cc7fb69664b72",
+            "3526d5dfcbb84243",
+            "7aced3bdfa9f7136",
+            "660da20826e4be22",
+            "7b290cd8bdb5391b",
+            "50bea0c384decab4"
+        ],
+        "x": 14,
+        "y": 459,
+        "w": 692,
+        "h": 222
+    },
+    {
+        "id": "b34da12927cc3a1d",
+        "type": "Number",
+        "z": "17198d95159c5227",
+        "g": "ed2b8a320c97fabb",
+        "name": "Random Number",
+        "minimum": "0",
+        "maximum": "100",
+        "roundTo": "2",
+        "Floor": true,
+        "x": 290,
+        "y": 220,
+        "wires": [
+            [
+                "80f2052206f9013f",
+                "923e3bb7f9fc2586",
+                "e606e2eb76a0be2f",
+                "e1e304f1077f5c91"
+            ]
+        ]
+    },
+    {
+        "id": "1898b845b4f053c7",
+        "type": "inject",
+        "z": "17198d95159c5227",
+        "g": "53fc997ba361833f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 120,
+        "wires": [
+            [
+                "dfdc401a3c8dc6a2"
+            ]
+        ]
+    },
+    {
+        "id": "dfdc401a3c8dc6a2",
+        "type": "Number",
+        "z": "17198d95159c5227",
+        "g": "53fc997ba361833f",
+        "name": "Random Number",
+        "minimum": "0",
+        "maximum": "9999",
+        "roundTo": "2",
+        "Floor": true,
+        "x": 370,
+        "y": 120,
+        "wires": [
+            [
+                "4c3bde40c588b3d2"
+            ]
+        ]
+    },
+    {
+        "id": "48a1c88b05e8f2f5",
+        "type": "ui-lcd",
+        "z": "17198d95159c5227",
+        "g": "ed2b8a320c97fabb",
+        "name": "",
+        "group": "fdebe630cafcf2a0",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "This will set position to (3, 1)",
+        "rows": 2,
+        "cols": 16,
+        "pixel_size": 3,
+        "space_size": 1,
+        "backlight_color": "#ccdd22",
+        "pixel_color": "#474d0b",
+        "auto_clear": true,
+        "rom": "eu",
+        "x": 750,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "4c3bde40c588b3d2",
+        "type": "ui-lcd",
+        "z": "17198d95159c5227",
+        "g": "53fc997ba361833f",
+        "name": "",
+        "group": "6f734ac558f49285",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "LCD Test with Number",
+        "rows": 2,
+        "cols": 16,
+        "pixel_size": 3,
+        "space_size": 1,
+        "backlight_color": "#ccdd22",
+        "pixel_color": "#474d0b",
+        "auto_clear": true,
+        "rom": "eu",
+        "x": 610,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "32b5acddafcbac74",
+        "type": "Name",
+        "z": "17198d95159c5227",
+        "g": "53fc997ba361833f",
+        "name": "Random Name",
+        "nameLength": 2,
+        "x": 360,
+        "y": 60,
+        "wires": [
+            [
+                "a442d02cb26208a9"
+            ]
+        ]
+    },
+    {
+        "id": "05e8c69f3a1b2be7",
+        "type": "inject",
+        "z": "17198d95159c5227",
+        "g": "53fc997ba361833f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 60,
+        "wires": [
+            [
+                "32b5acddafcbac74"
+            ]
+        ]
+    },
+    {
+        "id": "a442d02cb26208a9",
+        "type": "ui-lcd",
+        "z": "17198d95159c5227",
+        "g": "53fc997ba361833f",
+        "name": "",
+        "group": "6f734ac558f49285",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "LCD Test with text (username) and blur",
+        "rows": "2",
+        "cols": "16",
+        "pixel_size": "3",
+        "space_size": "1",
+        "backlight_color": "#ccdd22",
+        "pixel_color": "#474d0b",
+        "auto_clear": true,
+        "rom": "eu",
+        "transitionDuration": "100",
+        "x": 610,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "80f2052206f9013f",
+        "type": "function",
+        "z": "17198d95159c5227",
+        "g": "ed2b8a320c97fabb",
+        "name": "Set position",
+        "func": "msg.col = 3;\nmsg.row = 1;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 220,
+        "wires": [
+            [
+                "48a1c88b05e8f2f5"
+            ]
+        ]
+    },
+    {
+        "id": "c6fc0470250cccd6",
+        "type": "ui-button",
+        "z": "17198d95159c5227",
+        "g": "ed2b8a320c97fabb",
+        "group": "fdebe630cafcf2a0",
+        "name": "",
+        "label": "Try",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 90,
+        "y": 220,
+        "wires": [
+            [
+                "b34da12927cc3a1d"
+            ]
+        ]
+    },
+    {
+        "id": "dc66a6326ccc814c",
+        "type": "ui-lcd",
+        "z": "17198d95159c5227",
+        "g": "ed2b8a320c97fabb",
+        "name": "",
+        "group": "fdebe630cafcf2a0",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "label": "This will set position to (5, 4)",
+        "rows": "5",
+        "cols": 16,
+        "pixel_size": 3,
+        "space_size": 1,
+        "backlight_color": "#ccdd22",
+        "pixel_color": "#474d0b",
+        "auto_clear": true,
+        "rom": "eu",
+        "x": 750,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "923e3bb7f9fc2586",
+        "type": "function",
+        "z": "17198d95159c5227",
+        "g": "ed2b8a320c97fabb",
+        "name": "Set position",
+        "func": "msg.col = 5;\nmsg.row = 4;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 280,
+        "wires": [
+            [
+                "dc66a6326ccc814c"
+            ]
+        ]
+    },
+    {
+        "id": "146ba5bb8be8d827",
+        "type": "ui-lcd",
+        "z": "17198d95159c5227",
+        "g": "ed2b8a320c97fabb",
+        "name": "",
+        "group": "fdebe630cafcf2a0",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "This will set position to (7, 0)",
+        "rows": 2,
+        "cols": 16,
+        "pixel_size": 3,
+        "space_size": 1,
+        "backlight_color": "#ccdd22",
+        "pixel_color": "#474d0b",
+        "auto_clear": true,
+        "rom": "eu",
+        "x": 750,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "e606e2eb76a0be2f",
+        "type": "function",
+        "z": "17198d95159c5227",
+        "g": "ed2b8a320c97fabb",
+        "name": "Set position",
+        "func": "msg.col = 7;\nmsg.row = 0;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 340,
+        "wires": [
+            [
+                "146ba5bb8be8d827"
+            ]
+        ]
+    },
+    {
+        "id": "673d5f3455705318",
+        "type": "ui-lcd",
+        "z": "17198d95159c5227",
+        "g": "ed2b8a320c97fabb",
+        "name": "",
+        "group": "fdebe630cafcf2a0",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "label": "This will set position to random",
+        "rows": "5",
+        "cols": "20",
+        "pixel_size": 3,
+        "space_size": 1,
+        "backlight_color": "#ccdd22",
+        "pixel_color": "#474d0b",
+        "auto_clear": true,
+        "rom": "eu",
+        "x": 750,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "e1e304f1077f5c91",
+        "type": "function",
+        "z": "17198d95159c5227",
+        "g": "ed2b8a320c97fabb",
+        "name": "Set position (random)",
+        "func": "msg.col = Math.floor(Math.random() * (20 - 0 + 1)) + 0;\nmsg.row = Math.floor(Math.random() * (4 - 0 + 1)) + 0;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 400,
+        "wires": [
+            [
+                "673d5f3455705318"
+            ]
+        ]
+    },
+    {
         "id": "b24dccc8209e55a6",
         "type": "ui-markdown",
         "z": "17198d95159c5227",
@@ -16,6 +477,218 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "6447cdf97ea1896a",
+        "type": "ui-button",
+        "z": "17198d95159c5227",
+        "g": "263938e8e63c7ffe",
+        "group": "107dfe8bb2eafbe2",
+        "name": "",
+        "label": "Try",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 90,
+        "y": 600,
+        "wires": [
+            [
+                "3526d5dfcbb84243",
+                "50bea0c384decab4"
+            ]
+        ]
+    },
+    {
+        "id": "508cc7fb69664b72",
+        "type": "ui-lcd",
+        "z": "17198d95159c5227",
+        "g": "263938e8e63c7ffe",
+        "name": "",
+        "group": "107dfe8bb2eafbe2",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "Should output custom character ",
+        "rows": "2",
+        "cols": "16",
+        "pixel_size": 3,
+        "space_size": 1,
+        "backlight_color": "#ccdd22",
+        "pixel_color": "#474d0b",
+        "auto_clear": false,
+        "rom": "eu",
+        "x": 610,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "3526d5dfcbb84243",
+        "type": "function",
+        "z": "17198d95159c5227",
+        "g": "263938e8e63c7ffe",
+        "name": "Custom Character ",
+        "func": "let custom_char_msg = {\n    cusChar: [\n        0x00,\n        0x00,\n        0x0A,\n        0x15,\n        0x11,\n        0x0A,\n        0x04,\n        0x00\n    ],\n    col: 11,\n    row: 0\n}\n\nreturn custom_char_msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 600,
+        "wires": [
+            [
+                "508cc7fb69664b72"
+            ]
+        ]
+    },
+    {
+        "id": "7aced3bdfa9f7136",
+        "type": "debug",
+        "z": "17198d95159c5227",
+        "g": "263938e8e63c7ffe",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "660da20826e4be22",
+        "type": "ui-button",
+        "z": "17198d95159c5227",
+        "g": "263938e8e63c7ffe",
+        "group": "107dfe8bb2eafbe2",
+        "name": "",
+        "label": "Clear",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 90,
+        "y": 640,
+        "wires": [
+            [
+                "7b290cd8bdb5391b"
+            ]
+        ]
+    },
+    {
+        "id": "7b290cd8bdb5391b",
+        "type": "function",
+        "z": "17198d95159c5227",
+        "g": "263938e8e63c7ffe",
+        "name": "Clear",
+        "func": "let clear_msg = {\n    clear: true,\n    payload: \"\"\n}\n\nreturn clear_msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 640,
+        "wires": [
+            [
+                "508cc7fb69664b72"
+            ]
+        ]
+    },
+    {
+        "id": "50bea0c384decab4",
+        "type": "function",
+        "z": "17198d95159c5227",
+        "g": "263938e8e63c7ffe",
+        "name": "Text",
+        "func": "let text_msg = {\n    payload: \"DPSoftware\",\n    col: 0,\n    row: 0\n}\n\nreturn text_msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 560,
+        "wires": [
+            [
+                "508cc7fb69664b72"
+            ]
+        ]
+    },
+    {
+        "id": "fdebe630cafcf2a0",
+        "type": "ui-group",
+        "name": "LCD Set position",
+        "page": "f72914043b649b14",
+        "width": 6,
+        "height": 1,
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "6f734ac558f49285",
+        "type": "ui-group",
+        "name": "LCD Realtime",
+        "page": "f72914043b649b14",
+        "width": 6,
+        "height": 1,
+        "order": 3,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
     },
     {
         "id": "107dfe8bb2eafbe2",
