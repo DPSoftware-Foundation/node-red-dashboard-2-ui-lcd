@@ -76,9 +76,6 @@ export default {
             var row = msg.row || 0;
             var col = msg.col || 0;
 
-            console.log(row);
-            console.log(col);
-
             if (msg.cusChar && Array.isArray(msg.cusChar)) {
                 this.lcd.set(row, col, msg.cusChar);
             } 
